@@ -1,12 +1,14 @@
 <template>
   <section class="section home">
     <div class="columns is-mobile">
-      <div class="column is-half"></div>
       <div class="column is-half">
         <div class="home__imageOfMe_container">
-          <img :src="imgSrc" class = "home__imageOfMe"></div>
+          <img :src="imgSrc" class = "home__imageOfMe">
         </div>
       </div>
+      <div class="column is-half">
+        <p class="home__header"> Борис Тимофеенко </p>
+      </div>      
     </div>
   </section>
 </template>
@@ -28,8 +30,14 @@ export default {
 </script>
 
 <style lang="scss">
+
 .home {
-  background-color: black;
+
+  &__header {
+    font-family: 'Open Sans Condensed', sans-serif;   
+    font-size: 48px;    
+    color: white; 
+  }
 
   &__imageOfMe_container {
     height: 50vh;

@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    Дефолтный layout
+    Дефолтный layout - тут будет меню
     <nuxt/>    
   </div>
 </template>
@@ -17,7 +17,6 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Open+Sans:400,700&display=swap');
 .main {
-  background-color: black;
   height: 100%;
 }
 </style>

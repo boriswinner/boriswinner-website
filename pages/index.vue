@@ -16,12 +16,12 @@
 
   <section class="section projects">
     <p class="projects__header"> {{projectsTexts.title}} </p>
-    <div class="columns">
-      <div class="column is-half">
-        <div v-for="project in projectsTexts.projects" :key="project.name" class="box">
+    <div class="columns is-multiline">
+      <div v-for="project in projectsTexts.projects" :key="project.name" class="column is-half is-flex">
+        <div class="box">
           <p class="projects__header2"> {{project.name}} </p>
           <div class="columns">
-            <div class="column is-narrow">
+            <div class="column is-half is-narrow has-text-centered">
               <img :src="project.imgSrc" class="projects__imageOfProject">
             </div>
             <div class="column">
@@ -82,6 +82,17 @@ export default {
             links: [
               {
                 url: 'https://github.com/boriswinner/teendok',
+                description: 'исходный код на GitHub'
+              }
+            ]
+          },
+          {
+            name: 'Athanatos',
+            description: 'Проект с хакатона, написанный вместе с t1meshift. Утилита для бэкапа данных бизнеса с использованием в качестве хранилища компьютеров соотрудников компании. Данные разбиваются на части, каждая часть в нескольких экземплярах загружается на случайные компьютеры компании. Актуальность данных поддерживается автоматически.',
+            imgSrc: require('@/assets/athanatos.png'),
+            links: [
+              {
+                url: 'https://github.com/t1meshift/athanatos',
                 description: 'исходный код на GitHub'
               }
             ]
@@ -164,7 +175,7 @@ export default {
   }  
 
   &__imageOfProject {
-    height: 50vh;
+    max-height: 50vh;
   }      
 }
 </style>

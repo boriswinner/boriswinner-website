@@ -20,10 +20,10 @@
         <li class="home__paragraph" v-for="advantage in truncatedAdvantages" :key="advantage">{{advantage}}</li>
         <p v-if="$device.isMobile" @click="isShowAdvantagesOpened = !isShowAdvantagesOpened" class="projects__link">{{showMoreText}}</p>
         <div class = "home__buttons-container">
-            <b-button tag="a" size="is-medium" icon-left="github-circle" :href="WebsiteSrc">
+            <b-button tag="a" class="home__button" size="is-medium" icon-left="github-circle" :href="WebsiteSrc">
                 Код этого сайта на GitHub
             </b-button>       
-            <b-button tag="a" size="is-medium" icon-left="book" type="is-link" :href="CvSrc">
+            <b-button tag="a" class="home__button" size="is-medium" icon-left="book" type="is-link" :href="CvSrc">
                 Моё резюме (PDF)
             </b-button>       
         </div> 
@@ -240,6 +240,11 @@ export default {
 
   &__buttons-container {
     margin-top: 20px;
+  }
+
+  &__button {
+    display: inline-block;
+    margin: 5px 10px;
   }
 }
 

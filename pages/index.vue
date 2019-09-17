@@ -1,16 +1,23 @@
 <template>
 <div>
   <section class="section home">
-    <div class="columns">
+    <div class="columns is-centered">
       <div class="column is-4">
         <div class="home__imageOfMe_container">
           <img :src="imgSrc" class = "home__imageOfMe">
         </div>
       </div>
-      <div class="column is-8">
+      <b-collapse :open="false" aria-id="show-advantages-button">
+      <button
+          class="button is-light"
+          slot="trigger"
+          aria-controls="show-advantages-button">Click me!
+      </button>        
+      <div class="column is-narrow">
         <p class="home__header"> {{homeTexts.title}} </p>
         <li class="home__paragraph" v-for="advantage in homeTexts.advantages" :key="advantage">{{advantage}}</li>
       </div>      
+      </b-collapse>
     </div>
   </section>
 
@@ -18,7 +25,7 @@
     <p class="projects__header"> {{projectsTexts.title}} </p>
     <div class="columns is-multiline">
       <div v-for="project in projectsTexts.projects" :key="project.name" class="column is-half is-flex">
-        <div class="box">
+        <div class="box projects__box">
           <p class="projects__header2"> {{project.name}} </p>
           <div class="columns">
             <div class="column is-half is-narrow has-text-centered">
@@ -194,6 +201,7 @@ export default {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     color: #f2f2f2;   
+    text-align: justify;    
   }
 
   &__imageOfMe_container {
@@ -203,12 +211,16 @@ export default {
   }
 
   &__imageOfMe {
-    height: 100%;
+    max-height: 100%;
   }
 }
 
 .projects {
   background-color: #eae7af;
+
+  &__box {
+    width: 100%;
+  }
 
   &__header {
     font-family: 'Open Sans Condensed', sans-serif;   
@@ -216,6 +228,7 @@ export default {
     color: #160f30; 
     font-weight: 300;
     margin-bottom: 40px;
+    text-align: center;
   }  
 
   &__header2 {
@@ -224,15 +237,19 @@ export default {
     color: #160f30; 
     font-weight: 300;
     margin-bottom: 40px;
+    text-align: center;    
   }
 
   &__paragraph {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     color: black;   
+    text-align: justify;
   }
 
   &__link {
+    margin-top: 20px;
+    display: inline-block;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;  
   }  

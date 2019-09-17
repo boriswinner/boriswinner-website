@@ -8,7 +8,15 @@
         </div>
       </div>
       <div class="column is-narrow-desktop">
-        <p class="home__header"> {{homeTexts.title}} </p>
+        <div v-if="$device.isMobile" class="columns is-mobile is-vcentered">
+          <div class="column is-3">
+            <img v-if="$device.isMobile" :src="imgSrc" class = "home__imageOfMe home__header">
+          </div>
+          <div class="column">
+            <p class="home__header"> {{homeTexts.title}} </p>          
+          </div>
+        </div>
+        <p v-if="!$device.isMobile" class="home__header"> {{homeTexts.title}} </p>  
         <li class="home__paragraph" v-for="advantage in truncatedAdvantages" :key="advantage">{{advantage}}</li>
         <p v-if="$device.isMobile" @click="isShowAdvantagesOpened = !isShowAdvantagesOpened" class="projects__link">{{showMoreText}}</p>
       </div>      

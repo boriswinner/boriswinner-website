@@ -19,6 +19,14 @@
         <p v-if="!$device.isMobile" class="home__header"> {{homeTexts.title}} </p>  
         <li class="home__paragraph" v-for="advantage in truncatedAdvantages" :key="advantage">{{advantage}}</li>
         <p v-if="$device.isMobile" @click="isShowAdvantagesOpened = !isShowAdvantagesOpened" class="projects__link">{{showMoreText}}</p>
+        <div class = "home__buttons-container">
+            <b-button tag="a" size="is-medium" icon-left="github-circle" :href="WebsiteSrc">
+                Код этого сайта на GitHub
+            </b-button>       
+            <b-button tag="a" size="is-medium" icon-left="book" type="is-link" :href="CvSrc">
+                Моё резюме (PDF)
+            </b-button>       
+        </div> 
       </div>      
     </div>
   </section>
@@ -60,6 +68,8 @@ export default {
     return {
       isShowAdvantagesOpened: false,
       imgSrc: require('@/assets/me.png'),
+      CvSrc: require('@/assets/cv.pdf'),
+      WebsiteSrc: 'https://github.com/boriswinner/boriswinner-website',
       homeTexts: {
         title: 'Борис Тимофеенко',
         advantages: [
@@ -226,6 +236,10 @@ export default {
 
   &__imageOfMe {
     max-height: 100%;
+  }
+
+  &__buttons-container {
+    margin-top: 20px;
   }
 }
 

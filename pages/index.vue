@@ -36,7 +36,9 @@
             <div class="column">
               <p class="projects__paragraph">{{project.description}}</p>
               <li class="projects__paragraph" v-for="advantage in project.advantages" :key="advantage">{{advantage}}</li>
-              <a class="projects__link" v-for="link in project.links" :href="link.url" :key="link.url">{{link.description}}<br></a>
+              <div class="projects__links-container">
+                <a class="projects__link" v-for="link in project.links" :href="link.url" :key="link.url">{{link.description}}<br></a>
+              </div>
             </div>
           </div>
         </div>
@@ -189,7 +191,7 @@ export default {
 <style lang="scss">
 
 .home {
-  background-color:black;
+  background-color:#222222;
     
   @keyframes bounceIn {
     0% {
@@ -228,7 +230,7 @@ export default {
 }
 
 .projects {
-  background-color: #eae7af;
+  background-color: #e4e4e4;
 
   &__box {
     width: 100%;
@@ -259,9 +261,11 @@ export default {
     text-align: justify;
   }
 
-  &__link {
+  &__links-container {
     margin-top: 20px;
-    display: inline-block;
+  }
+
+  &__link {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;  
   }  

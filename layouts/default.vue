@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    Дефолтный layout - тут будет меню
+    <!-- Дефолтный layout - тут будет меню -->
     <nuxt/>    
   </div>
 </template>

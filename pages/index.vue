@@ -133,7 +133,33 @@ export default {
                 description: 'исходный код на GitHub'
               },
             ]            
-          }
+          },
+          {
+            name: 'Крестики-нолики',
+            description: 'Учебный проект - адаптивные крестики-нолики на JS. Написан на 1 курсе.',
+            imgSrc: require('@/assets/tic.png'),
+            links: [
+              {
+                url: 'https://github.com/https://github.com/boriswinner/Tic-Tac-Toe/wba',
+                description: 'исходный код на GitHub'
+              },
+              {
+                url: 'https://boriswinner.github.io/Tic-Tac-Toe/',
+                description: 'Играть онлайн'
+              },              
+            ]            
+          },
+          {
+            name: 'Решения задач из CATS',
+            description: 'Решения задач на программирование (в основном на алгоритмы и структуры данных), написанные за первые курсы обучения в университете.',
+            imgSrc: require('@/assets/tasks.png'),
+            links: [
+              {
+                url: 'https://github.com/boriswinner/task-solutions/',
+                description: 'исходный код на GitHub'
+              },            
+            ]            
+          },                    
         ]
       }
     }

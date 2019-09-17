@@ -27,7 +27,7 @@
             <div class="column">
               <p class="projects__paragraph">{{project.description}}</p>
               <li class="projects__paragraph" v-for="advantage in project.advantages" :key="advantage">{{advantage}}</li>
-              <a class="projects__link" v-for="link in project.links" :href="link.url" :key="link.url">{{link.description}}</a>
+              <a class="projects__link" v-for="link in project.links" :href="link.url" :key="link.url">{{link.description}}<br></a>
             </div>
           </div>
         </div>
@@ -96,6 +96,43 @@ export default {
                 description: 'исходный код на GitHub'
               }
             ]
+          },
+          {
+            name: 'Raycaster',
+            description: 'На первом курсе с другом написали свой 2.5D-движок в духе Wolfenstein 3-D. Использует SDL2 для рендера, поддерживает текстуры, прозрачность, коллизии, разные разрешения экрана и FOV.',
+            imgSrc: require('@/assets/raycaster.gif'),
+            links: [
+              {
+                url: 'https://github.com/boriswinner/raycaster/tree/testing',
+                description: 'исходный код на GitHub'
+              }
+            ]            
+          },
+          {
+            name: 'Три в ряд',
+            description: 'Игра "три в ряд", написанная на JavaScript вместе с ZeroICQ и SergeyZinkovich',
+            imgSrc: require('@/assets/3IR.png'),
+            links: [
+              {
+                url: 'https://github.com/ZeroICQ/3IR',
+                description: 'исходный код на GitHub'
+              },
+              {
+                url: 'https://zeroicq.github.io/3IR/',
+                description: 'играть онлайн'
+              }
+            ]               
+          },
+          {
+            name: 'WBA',
+            description: 'Учебный проект - веб-интерфейс для расписания + бэкенд. Серверная часть написана на Python+Flask, в качестве СУБД используется Firebird.',
+            imgSrc: require('@/assets/wba.png'),
+            links: [
+              {
+                url: 'https://github.com/boriswinner/wba',
+                description: 'исходный код на GitHub'
+              },
+            ]            
           }
         ]
       }

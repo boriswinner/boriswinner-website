@@ -42,6 +42,7 @@ export default {
     'nuxt-buefy',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/device',
   ],
   /*
   ** Axios module configuration

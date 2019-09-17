@@ -2,22 +2,16 @@
 <div>
   <section class="section home">
     <div class="columns is-centered">
-      <div class="column is-4">
+      <div class="column is-4 is-hidden-mobile">
         <div class="home__imageOfMe_container">
           <img :src="imgSrc" class = "home__imageOfMe">
         </div>
       </div>
-      <b-collapse :open="false" aria-id="show-advantages-button">
-      <button
-          class="button is-light"
-          slot="trigger"
-          aria-controls="show-advantages-button">Click me!
-      </button>        
-      <div class="column is-narrow">
+      <div class="column is-narrow-desktop">
         <p class="home__header"> {{homeTexts.title}} </p>
-        <li class="home__paragraph" v-for="advantage in homeTexts.advantages" :key="advantage">{{advantage}}</li>
+        <li class="home__paragraph" v-for="advantage in truncatedAdvantages" :key="advantage">{{advantage}}</li>
+        <p v-if="$device.isMobile" @click="isShowAdvantagesOpened = !isShowAdvantagesOpened" class="projects__link">{{showMoreText}}</p>
       </div>      
-      </b-collapse>
     </div>
   </section>
 
@@ -54,6 +48,7 @@ export default {
   },
   data () {
     return {
+      isShowAdvantagesOpened: false,
       imgSrc: require('@/assets/me.png'),
       homeTexts: {
         title: 'Борис Тимофеенко',
@@ -170,7 +165,16 @@ export default {
         ]
       }
     }
-  }
+  },
+  computed: {
+    truncatedAdvantages: function () {
+      let numberOfStrings = (this.$device.isMobile && !this.isShowAdvantagesOpened ? 3 : this.homeTexts.advantages.length)
+      return this.homeTexts.advantages.slice(0, numberOfStrings)
+    },
+    showMoreText: function () {
+      return (this.isShowAdvantagesOpened ? 'скрыть' : 'Показать ещё...')
+    }
+  },  
 }
 </script>
 

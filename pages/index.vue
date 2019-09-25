@@ -19,6 +19,33 @@
         <p v-if="!$device.isMobile" class="home__header"> {{homeTexts.title}} </p>  
         <li class="home__paragraph" v-for="advantage in truncatedAdvantages" :key="advantage">{{advantage}}</li>
         <p v-if="$device.isMobile" @click="isShowAdvantagesOpened = !isShowAdvantagesOpened" class="projects__link">{{showMoreText}}</p>
+
+        <div class="home__contacts-wrapper">
+          <b-icon
+              class="home__contact-icon"
+              icon="phone"
+              size="is-large"
+              type="is-primary">
+          </b-icon>
+          <a class="home__contact" :href="'tel:'+phoneNumber">{{phoneNumber}}</a>          
+
+          <b-icon
+              class="home__contact-icon"
+              icon="telegram"
+              size="is-large"
+              type="is-light">
+          </b-icon>
+          <a class="home__contact" :href="'https://t.me/'+telegramNick.substr(1)">{{telegramNick}}</a>             
+
+          <b-icon
+              class="home__contact-icon"
+              icon="email"
+              size="is-large"
+              type="is-light">
+          </b-icon>
+          <a class="home__contact" :href="'mailto:'+emailAddress">{{emailAddress}}</a>              
+        </div>
+
         <div class = "home__buttons-container">
             <b-button tag="a" class="home__button" size="is-medium" icon-left="github-circle" :href="WebsiteSrc">
                 Код этого сайта на GitHub
@@ -70,6 +97,9 @@ export default {
       imgSrc: require('@/assets/me.png'),
       CvSrc: require('@/assets/cv.pdf'),
       WebsiteSrc: 'https://github.com/boriswinner/boriswinner-website',
+      phoneNumber: '+7 (924) 132-77-13',
+      telegramNick: '@no_nick',
+      emailAddress: 'boriswinner88@gmail.com',
       homeTexts: {
         title: 'Борис Тимофеенко',
         advantages: [
@@ -236,7 +266,39 @@ export default {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     color: #f2f2f2;   
-    text-align: justify;    
+    text-align: justify;
+  }
+
+  &__contacts-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;    
+
+    @media only screen and (min-width: 0px) and (max-width: 660px) {
+      flex-direction: column;
+    }
+  }
+
+  &__contact-icon {
+    flex-basis: 15%;
+  }
+
+  &__contact {
+    font-family: 'Open Sans Condensed', sans-serif;   
+    font-size: 32px;    
+    color: white; 
+    font-weight: 400;
+    flex-basis: 85%;
+
+    @media only screen and (min-width: 0px) and (max-width: 660px) {
+      font-size: 24px;
+    }
+  }
+
+  &__contact:hover {
+    color: burlywood;
   }
 
   &__imageOfMe_container {
@@ -256,6 +318,11 @@ export default {
   &__button {
     display: inline-block;
     margin: 5px 10px;
+
+    @media only screen and (min-width: 0px) and (max-width: 660px) {
+      width: 100%;
+      margin: 5px 0px;
+    }    
   }
 }
 

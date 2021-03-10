@@ -13,10 +13,10 @@
             <img v-if="$device.isMobile" :src="imgSrc" class = "home__imageOfMe home__header">
           </div>
           <div class="column">
-            <p class="home__header"> {{homeTexts.title}} </p>          
+            <p class="home__header"> {{homeTexts.title}} </p>
           </div>
         </div>
-        <p v-if="!$device.isMobile" class="home__header"> {{homeTexts.title}} </p>  
+        <p v-if="!$device.isMobile" class="home__header"> {{homeTexts.title}} </p>
         <li class="home__paragraph" v-for="advantage in truncatedAdvantages" :key="advantage">{{advantage}}</li>
         <p v-if="$device.isMobile" @click="isShowAdvantagesOpened = !isShowAdvantagesOpened" class="projects__link">{{showMoreText}}</p>
 
@@ -27,7 +27,7 @@
               size="is-large"
               type="is-primary">
           </b-icon>
-          <a class="home__contact" :href="'tel:'+phoneNumber">{{phoneNumber}}</a>          
+          <a class="home__contact" :href="'tel:'+phoneNumber">{{phoneNumber}}</a>
 
           <b-icon
               class="home__contact-icon"
@@ -35,7 +35,7 @@
               size="is-large"
               type="is-light">
           </b-icon>
-          <a class="home__contact" :href="'https://t.me/'+telegramNick.substr(1)">{{telegramNick}}</a>             
+          <a class="home__contact" :href="'https://t.me/'+telegramNick.substr(1)">{{telegramNick}}</a>
 
           <b-icon
               class="home__contact-icon"
@@ -43,18 +43,18 @@
               size="is-large"
               type="is-light">
           </b-icon>
-          <a class="home__contact" :href="'mailto:'+emailAddress">{{emailAddress}}</a>              
+          <a class="home__contact" :href="'mailto:'+emailAddress">{{emailAddress}}</a>
         </div>
 
         <div class = "home__buttons-container">
             <b-button tag="a" class="home__button" size="is-medium" icon-left="github-circle" :href="WebsiteSrc">
                 Код этого сайта на GitHub
-            </b-button>       
+            </b-button>
             <b-button tag="a" class="home__button" size="is-medium" icon-left="book" type="is-link" :href="CvSrc">
                 Моё резюме (PDF)
-            </b-button>       
-        </div> 
-      </div>      
+            </b-button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -103,16 +103,14 @@ export default {
       homeTexts: {
         title: 'Борис Тимофеенко',
         advantages: [
-          'Студент 4 курса факультета "Прикладная математика и информатика" ДВФУ',
-          'Занимаюсь frontend-разработкой, освоил Vue.JS, Nuxt, Bulma',
-          'Занимаюсь мобильной разработкой с использованием NativeScript',
+          'Магистрант 1 курса направления "Большие данные и машинное обучение" ИТМО',
+          'Закончил бакалавриат направления "Прикладная математика и информатика" в ДВФУ',
+          'Занимаюсь машинным обучением и нейронными сетями. Исследую сегментацию спутниковых изображений и генерацию музыки.',
+          'Занимаюсь frontend-разработкой. Vue.js, React, Nuxt.js, Next.js, JQuery',
           'Владею языками программирования Python, C/C++, Javascript',
-          'Умею пользоваться Git, различными IDE, дебаггером, покрывать код тестами',
-          'Имею представление о базах данных (делал учебный проект с использованием Firebird)',
-          'Понимаю алгоритмы и структуры данных',
           'Уверенное знание английского (между Upper Intermediate и Advanced)',
-          'Создавал Tegegram-ботов на pyTelegramBotAPI',
-          'Как-то раз на первом курсе с другом написал 2.5D-движок а-ля Wolfenstein',
+          'Понимаю алгоритмы и структуры данных',
+          'Git, SQL, NativeScript, Firebird, Flask, Telegram-боты',
         ]
       },
       projectsTexts: {
@@ -148,7 +146,7 @@ export default {
                 description: 'исходный код на GitHub'
               }
             ]
-          },          
+          },
           {
             name: 'Athanatos',
             description: 'Проект с хакатона, написанный вместе с t1meshift. Утилита для бэкапа данных бизнеса с использованием в качестве хранилища компьютеров соотрудников компании. Данные разбиваются на части, каждая часть в нескольких экземплярах загружается на случайные компьютеры компании. Актуальность данных поддерживается автоматически.',
@@ -169,7 +167,7 @@ export default {
                 url: 'https://github.com/boriswinner/raycaster/tree/testing',
                 description: 'исходный код на GitHub'
               }
-            ]            
+            ]
           },
           {
             name: 'Три в ряд',
@@ -184,7 +182,7 @@ export default {
                 url: 'https://zeroicq.github.io/3IR/',
                 description: 'играть онлайн'
               }
-            ]               
+            ]
           },
           {
             name: 'WBA',
@@ -195,7 +193,7 @@ export default {
                 url: 'https://github.com/boriswinner/wba',
                 description: 'исходный код на GitHub'
               },
-            ]            
+            ]
           },
           {
             name: 'Крестики-нолики',
@@ -209,8 +207,8 @@ export default {
               {
                 url: 'https://boriswinner.github.io/Tic-Tac-Toe/',
                 description: 'Играть онлайн'
-              },              
-            ]            
+              },
+            ]
           },
           {
             name: 'Решения задач из CATS',
@@ -220,9 +218,9 @@ export default {
               {
                 url: 'https://github.com/boriswinner/task-solutions/',
                 description: 'исходный код на GitHub'
-              },            
-            ]            
-          },                    
+              },
+            ]
+          },
         ]
       }
     }
@@ -235,7 +233,7 @@ export default {
     showMoreText: function () {
       return (this.isShowAdvantagesOpened ? 'скрыть' : 'Показать ещё...')
     }
-  },  
+  },
 }
 </script>
 
@@ -243,7 +241,7 @@ export default {
 
 .home {
   background-color:#222222;
-    
+
   @keyframes bounceIn {
     0% {
       transform: scale(0.1);
@@ -252,12 +250,12 @@ export default {
     100% {
       transform: scale(1);
     }
-  }  
+  }
 
   &__header {
-    font-family: 'Open Sans Condensed', sans-serif;   
-    font-size: 48px;    
-    color: white; 
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 48px;
+    color: white;
     font-weight: 300;
     margin-bottom: 40px;
   }
@@ -265,8 +263,9 @@ export default {
   &__paragraph {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    color: #f2f2f2;   
+    color: #f2f2f2;
     text-align: justify;
+    max-width: 70%;
   }
 
   &__contacts-wrapper {
@@ -274,7 +273,7 @@ export default {
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 40px;    
+    margin-top: 40px;
 
     @media only screen and (min-width: 0px) and (max-width: 660px) {
       flex-direction: column;
@@ -286,9 +285,9 @@ export default {
   }
 
   &__contact {
-    font-family: 'Open Sans Condensed', sans-serif;   
-    font-size: 32px;    
-    color: white; 
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 32px;
+    color: white;
     font-weight: 400;
     flex-basis: 85%;
 
@@ -304,7 +303,7 @@ export default {
   &__imageOfMe_container {
     height: 50vh;
     animation-duration: 2s;
-    animation-name: bounceIn;     
+    animation-name: bounceIn;
   }
 
   &__imageOfMe {
@@ -322,7 +321,7 @@ export default {
     @media only screen and (min-width: 0px) and (max-width: 660px) {
       width: 100%;
       margin: 5px 0px;
-    }    
+    }
   }
 }
 
@@ -334,27 +333,27 @@ export default {
   }
 
   &__header {
-    font-family: 'Open Sans Condensed', sans-serif;   
-    font-size: 48px;    
-    color: #160f30; 
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 48px;
+    color: #160f30;
     font-weight: 300;
     margin-bottom: 40px;
     text-align: center;
-  }  
+  }
 
   &__header2 {
-    font-family: 'Open Sans Condensed', sans-serif;   
-    font-size: 36px;    
-    color: #160f30; 
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 36px;
+    color: #160f30;
     font-weight: 300;
     margin-bottom: 40px;
-    text-align: center;    
+    text-align: center;
   }
 
   &__paragraph {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    color: black;   
+    color: black;
     text-align: justify;
   }
 
@@ -364,11 +363,11 @@ export default {
 
   &__link {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 700;  
-  }  
+    font-weight: 700;
+  }
 
   &__imageOfProject {
     max-height: 50vh;
-  }      
+  }
 }
 </style>

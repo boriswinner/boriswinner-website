@@ -4,6 +4,8 @@
 
 ## Build Setup
 
+You need to have node v 10.23.0 installed. Better use nvm to manage node versions.
+
 ``` bash
 # install dependencies
 $ npm run install

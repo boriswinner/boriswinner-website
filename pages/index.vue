@@ -97,18 +97,20 @@ export default {
       imgSrc: require('@/assets/me.png'),
       CvSrc: require('@/assets/cv.pdf'),
       WebsiteSrc: 'https://github.com/boriswinner/boriswinner-website',
-      phoneNumber: '+7 (924) 132-77-13',
+      phoneNumber: '+7 (999) 538-48-93',
       telegramNick: '@no_nick',
       emailAddress: 'boriswinner88@gmail.com',
       homeTexts: {
         title: 'Борис Тимофеенко',
         advantages: [
-          'Магистрант 1 курса направления "Большие данные и машинное обучение" ИТМО',
+          'Аспирант 1 года обучения в ИТМО',
+          'Закончил магистратуру направления "Большие данные и машинное обучение" в ИТМО',
           'Закончил бакалавриат направления "Прикладная математика и информатика" в ДВФУ',
-          'Занимаюсь машинным обучением и нейронными сетями. Исследую сегментацию спутниковых изображений и генерацию музыки.',
+          'Занимаюсь машинным обучением и нейронными сетями. Область интересов: Computer Vision, генеративное искусство',
+          'Выполнил 3 исследовательких проекта по сегментации изображений и генерации музыки',
           'Занимаюсь frontend-разработкой. Vue.js, React, Nuxt.js, Next.js, JQuery',
           'Владею языками программирования Python, C/C++, Javascript',
-          'Уверенное знание английского (между Upper Intermediate и Advanced)',
+          'Уверенное знание английского (C1-C2 Advanced)',
           'Понимаю алгоритмы и структуры данных',
           'Git, SQL, NativeScript, Firebird, Flask, Telegram-боты',
         ]
@@ -266,6 +268,9 @@ export default {
     color: #f2f2f2;
     text-align: justify;
     max-width: 70%;
+    @media only screen and (min-width: 0px) and (max-width: 660px) {
+      max-width: 100%;
+    }    
   }
 
   &__contacts-wrapper {
